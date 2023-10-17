@@ -13,7 +13,7 @@ options:
 
 clean:
 	@echo cleaning
-	@rm -f gcodemillopt/*.o gcodemillopt/gcodemillopt ${OBJ}
+	@rm -f gcodemillopt/*.o gcodemillopt/gcodemillopt
 
 install: all
 	@echo installing executable file to ${DESTDIR}${PREFIX}/bin
@@ -30,7 +30,7 @@ uninstall:
 	@${CXX} -c ${CXXFLAGS} $< -o gcodemillopt/$@
 
 gcodemillopt: gcodemillopt.cpp.o
-	@echo ${CXX} gcodemillopt/$< -o gcodemillopt/$@ ${OBJ} ${LDFLAGS}
-	@${CXX} gcodemillopt/$< -o gcodemillopt/$@ ${OBJ} ${LDFLAGS}
+	@echo ${CXX} gcodemillopt/$< -o gcodemillopt/$@ ${LDFLAGS}
+	@${CXX} gcodemillopt/$< -o gcodemillopt/$@ ${LDFLAGS}
 
 .PHONY: all options clean install uninstall
